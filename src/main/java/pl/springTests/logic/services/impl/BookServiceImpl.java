@@ -28,21 +28,6 @@ public class BookServiceImpl implements BookService{
 	private AccountRepository accountRepository;
 
 	@Override
-	public Book createBook(Long accountId, Book book) {
-		Book findBookByTitle = findBookByTitle(book.getTitle());
-		if (findBookByTitle != null){
-			throw new BookExistsException();
-		}
-		Account findAccount = accountRepository.findAccount(accountId);
-		if (findAccount == null){
-			throw new AccountNotFoundException();
-		}
-		Book createBook = bookRepository.createBook(book);
-		createBook.setAccount(findAccount);
-		return createBook;
-	}
-
-	@Override
 	public Book deleteBook(Long bookId) {
 //		Book findBook = findBook(bookId);
 //		if (findBook == null){
@@ -71,14 +56,7 @@ public class BookServiceImpl implements BookService{
 		return bookRepository.findBookByTitle(title);
 	}
 
-	@Override
-	public BookList findBooksByAccount(Long accountId) {
-		Account findAccount = accountRepository.findAccount(accountId);
-		if (findAccount == null){
-			throw new AccountNotFoundException();
-		}
-		return new BookList(bookRepository.findBooksByAccount(accountId));
-	}
+	
 	
 	
 

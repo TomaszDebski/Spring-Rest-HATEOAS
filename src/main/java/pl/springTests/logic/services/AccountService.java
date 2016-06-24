@@ -1,7 +1,9 @@
 package pl.springTests.logic.services;
 
 import pl.springTests.logic.entities.Account;
+import pl.springTests.logic.entities.Book;
 import pl.springTests.logic.lists.AccountList;
+import pl.springTests.logic.lists.BookList;
 
 public interface AccountService {
 
@@ -10,5 +12,8 @@ public interface AccountService {
 	
     Account findAccount(Long id);
     Account findAccountByUsername(String userName);
+    
+    BookList findBooksByAccount(Long accountId);
+    Book createBook(Long accountId,Book data);
     
 }

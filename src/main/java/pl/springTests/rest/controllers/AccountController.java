@@ -87,9 +87,9 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value="/{accountId}/books",method=RequestMethod.GET)
-	public ResponseEntity<BookListResource> findAllBooks(@PathVariable Long accountId){
+	public ResponseEntity<BookListResource> findAllBooksByAccount(@PathVariable Long accountId){
 		try{
-		BookList findBooksByAccount = bookService.findBooksByAccount(accountId);
+		BookList findBooksByAccount = accountService.findBooksByAccount(accountId);
 		BookListResource bookListResource = 
 				new BookListResourceAssemboler().toResource(findBooksByAccount);
 		return new ResponseEntity<BookListResource>(bookListResource,HttpStatus.OK);
@@ -102,11 +102,11 @@ public class AccountController {
 	public ResponseEntity<BookResource> createBook(@PathVariable Long accountId,
 			@RequestBody BookResource bookResource){
 		try{
-			Book createBook = bookService.createBook(accountId, bookResource.toBook());
+			Book createBook = accountService.createBook(accountId, bookResource.toBook());
 			BookResource resource = new BookResourceAssembler().toResource(createBook);
 			HttpHeaders headers = new HttpHeaders();
 			headers.setLocation(URI.create(resource.getLink("self").getHref()));
-		return new ResponseEntity<BookResource>(resource,headers,HttpStatus.OK);
+		return new ResponseEntity<BookResource>(resource,headers,HttpStatus.CREATED);
 		}catch(AccountNotFoundException e){
 			throw new NotFoundException();
 		}catch(BookExistsException e){
