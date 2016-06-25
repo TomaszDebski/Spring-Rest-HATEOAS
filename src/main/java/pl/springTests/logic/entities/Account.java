@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * @author Tomasz Dębski
  *
- */
+ */ 
 
 @Entity
 public class Account {
