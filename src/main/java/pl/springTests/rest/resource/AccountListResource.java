@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.springframework.hateoas.ResourceSupport;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AccountListResource extends ResourceSupport {
 	
 	List<AccountResource> accounts = new ArrayList<>();
@@ -16,7 +20,4 @@ public class AccountListResource extends ResourceSupport {
 	public void setAccounts(List<AccountResource> accounts) {
 		this.accounts = accounts;
 	}
-	
-	
-
 }

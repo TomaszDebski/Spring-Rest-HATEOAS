@@ -13,6 +13,11 @@ import pl.springTests.logic.entities.Book;
 import pl.springTests.logic.lists.AuthorList;
 import pl.springTests.logic.repository.BookRepository;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Repository
 public class BookRepositoryImpl implements BookRepository {
 	
@@ -70,22 +75,5 @@ public class BookRepositoryImpl implements BookRepository {
 		return query.getResultList();
 	}
 
-	@Override
-	public Author createAuthor(Author author) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AuthorList findAllAuthors() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AuthorList findAuthorsByBook(Long bookId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

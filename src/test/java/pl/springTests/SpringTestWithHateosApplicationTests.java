@@ -6,13 +6,13 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringTestWithHateosApplication.class)
 @WebAppConfiguration
 public class SpringTestWithHateosApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
 
 }

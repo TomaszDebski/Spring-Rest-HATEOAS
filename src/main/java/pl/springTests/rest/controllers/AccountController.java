@@ -29,6 +29,11 @@ import pl.springTests.rest.resource.assemblers.AccountResourceAssembler;
 import pl.springTests.rest.resource.assemblers.BookListResourceAssemboler;
 import pl.springTests.rest.resource.assemblers.BookResourceAssembler;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Controller
 @RequestMapping("/library/accounts")
 public class AccountController {

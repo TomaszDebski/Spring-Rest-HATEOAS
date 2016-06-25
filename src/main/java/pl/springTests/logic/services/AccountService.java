@@ -2,8 +2,12 @@ package pl.springTests.logic.services;
 
 import pl.springTests.logic.entities.Account;
 import pl.springTests.logic.entities.Book;
-import pl.springTests.logic.lists.AccountList;
 import pl.springTests.logic.lists.BookList;
+
+/**
+ * @author Tomasz Dębski
+ *
+ */
 
 public interface AccountService {
 

@@ -4,6 +4,10 @@ import org.springframework.hateoas.ResourceSupport;
 
 import pl.springTests.logic.entities.Account;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AccountResource extends ResourceSupport{
 	
 	private String username;

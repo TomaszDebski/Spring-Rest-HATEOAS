@@ -9,11 +9,14 @@ import pl.springTests.rest.controllers.UserController;
 import pl.springTests.rest.resource.UserListResource;
 import pl.springTests.rest.resource.UserResource;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class UserListResourceAssembler extends ResourceAssemblerSupport<UserList, UserListResource>{
 
 	public UserListResourceAssembler() {
 		super(UserController.class, UserListResource.class);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

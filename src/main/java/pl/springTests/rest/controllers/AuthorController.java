@@ -14,6 +14,11 @@ import pl.springTests.logic.services.AuthorService;
 import pl.springTests.rest.resource.AuthorResource;
 import pl.springTests.rest.resource.assemblers.AuthorResourceAssembler;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Controller
 @RequestMapping("/library/authors")
 public class AuthorController {

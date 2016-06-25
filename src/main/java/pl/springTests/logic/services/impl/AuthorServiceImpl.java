@@ -11,6 +11,11 @@ import pl.springTests.logic.exceptions.AuthorNotFoundException;
 import pl.springTests.logic.repository.AuthorRepository;
 import pl.springTests.logic.services.AuthorService;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Service
 @Transactional
 public class AuthorServiceImpl implements AuthorService{

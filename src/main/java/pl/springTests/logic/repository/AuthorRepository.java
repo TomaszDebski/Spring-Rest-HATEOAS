@@ -6,6 +6,11 @@ import pl.springTests.logic.entities.Author;
 import pl.springTests.logic.entities.Book;
 import pl.springTests.logic.lists.AuthorList;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public interface AuthorRepository {
 
 	Author deleteAuthor(Long authorId);
@@ -13,4 +18,7 @@ public interface AuthorRepository {
 	
 	Author findAuthor(Long id);
 	Author findAuthorByName(String name);
+	
+	Author createAuthor(Author author);
+	List<Author> findAuthorsByBook(Long bookId);
 }

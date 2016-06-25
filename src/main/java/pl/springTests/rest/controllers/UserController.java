@@ -1,7 +1,6 @@
 package pl.springTests.rest.controllers;
 
 import java.net.URI;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -20,7 +19,6 @@ import pl.springTests.logic.exceptions.UserExistsException;
 import pl.springTests.logic.exceptions.UserNotFoundException;
 import pl.springTests.logic.lists.AccountList;
 import pl.springTests.logic.lists.UserList;
-import pl.springTests.logic.services.AccountService;
 import pl.springTests.logic.services.UserService;
 import pl.springTests.rest.exceptions.ConflictException;
 import pl.springTests.rest.exceptions.NotFoundException;
@@ -33,15 +31,17 @@ import pl.springTests.rest.resource.assemblers.AccountResourceAssembler;
 import pl.springTests.rest.resource.assemblers.UserListResourceAssembler;
 import pl.springTests.rest.resource.assemblers.UserResourceAssembler;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Controller
 @RequestMapping("/library/users")
 public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	
-	@Autowired 
-	private AccountService accountService;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<UserListResource> findAllUsers(){

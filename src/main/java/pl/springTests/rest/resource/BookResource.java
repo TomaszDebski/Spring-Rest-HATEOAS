@@ -4,6 +4,11 @@ import org.springframework.hateoas.ResourceSupport;
 
 import pl.springTests.logic.entities.Book;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class BookResource extends ResourceSupport {
 	
 	private String title;

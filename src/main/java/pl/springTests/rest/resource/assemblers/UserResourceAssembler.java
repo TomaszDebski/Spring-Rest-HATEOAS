@@ -1,12 +1,18 @@
 package pl.springTests.rest.resource.assemblers;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
 import pl.springTests.logic.entities.User;
 import pl.springTests.rest.controllers.UserController;
 import pl.springTests.rest.resource.UserResource;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class UserResourceAssembler extends ResourceAssemblerSupport<User,UserResource> {
 
 	public UserResourceAssembler() {

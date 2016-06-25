@@ -6,16 +6,16 @@
 	<groupId>pl.springTests</groupId>
 	<artifactId>SpringTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>SpringTestWithHateos</name>
-	<description></description>
+	<description>Tomasz Dębski</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -68,6 +68,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-
 </project>

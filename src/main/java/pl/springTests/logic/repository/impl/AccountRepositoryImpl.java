@@ -11,6 +11,11 @@ import org.springframework.stereotype.Repository;
 import pl.springTests.logic.entities.Account;
 import pl.springTests.logic.repository.AccountRepository;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Repository
 public class AccountRepositoryImpl implements AccountRepository{
 
@@ -52,7 +57,4 @@ public class AccountRepositoryImpl implements AccountRepository{
 			return null;
 		}
 	}
-
-	
-
 }

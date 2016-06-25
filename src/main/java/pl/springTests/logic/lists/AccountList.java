@@ -4,6 +4,11 @@ import java.util.List;
 
 import pl.springTests.logic.entities.Account;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class AccountList {
 	
 	List<Account> accounts;

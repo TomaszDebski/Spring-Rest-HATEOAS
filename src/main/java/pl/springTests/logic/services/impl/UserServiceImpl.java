@@ -1,7 +1,5 @@
 	package pl.springTests.logic.services.impl;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +15,11 @@ import pl.springTests.logic.lists.UserList;
 import pl.springTests.logic.repository.AccountRepository;
 import pl.springTests.logic.repository.UserRepository;
 import pl.springTests.logic.services.UserService;
+
+/**
+ * @author Tomasz Dębski
+ *
+ */
 
 @Service
 @Transactional
@@ -85,9 +88,7 @@ public class UserServiceImpl implements UserService{
 		if (findUser == null){
 			throw new UserNotFoundException();
 		}
-//		List<Account> findAccountsByUser = userRepository.findAccountsByUser(userId);
 		return new AccountList(userRepository.findAccountsByUser(userId));
 	}
-
 
 }

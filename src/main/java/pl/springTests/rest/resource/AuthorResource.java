@@ -4,6 +4,10 @@ import org.springframework.hateoas.ResourceSupport;
 
 import pl.springTests.logic.entities.Author;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AuthorResource extends ResourceSupport {
 
 	private String name;

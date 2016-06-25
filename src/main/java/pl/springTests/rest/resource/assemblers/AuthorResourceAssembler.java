@@ -1,13 +1,18 @@
 package pl.springTests.rest.resource.assemblers;
 
-import org.springframework.hateoas.ResourceSupport;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
 import pl.springTests.logic.entities.Author;
 import pl.springTests.rest.controllers.AuthorController;
 import pl.springTests.rest.resource.AuthorResource;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AuthorResourceAssembler extends ResourceAssemblerSupport<Author,AuthorResource> {
 
 	public AuthorResourceAssembler() {

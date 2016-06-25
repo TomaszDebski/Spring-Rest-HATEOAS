@@ -1,5 +1,10 @@
 package pl.springTests.logic.exceptions;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class UserNotFoundException extends RuntimeException {
 
 	public UserNotFoundException() {
@@ -7,12 +12,10 @@ public class UserNotFoundException extends RuntimeException {
 
 	public UserNotFoundException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public UserNotFoundException(Throwable cause) {
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	

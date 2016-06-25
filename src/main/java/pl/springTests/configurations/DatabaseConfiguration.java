@@ -14,75 +14,63 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Configuration
 public class DatabaseConfiguration {
 
-		@Bean
-		  public DataSource dataSource() {
+	@Bean
+	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));
-		    dataSource.setUrl(env.getProperty("db.url"));
-		    dataSource.setUsername(env.getProperty("db.username"));
-		    dataSource.setPassword(env.getProperty("db.password"));
-		    return dataSource;
-		  }
-		
-		 @Bean
-		  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		    LocalContainerEntityManagerFactoryBean entityManagerFactory =
-		        new LocalContainerEntityManagerFactoryBean();
-		    
-		    entityManagerFactory.setDataSource(dataSource);
-		    
-		    entityManagerFactory.setPackagesToScan(
-		        env.getProperty("entitymanager.packagesToScan"));
-		    
-		    // Vendor adapter
-		    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		    entityManagerFactory.setJpaVendorAdapter(vendorAdapter);
-		    
-		    // Hibernate properties
-		    Properties additionalProperties = new Properties();
-		    additionalProperties.put(
-		        "hibernate.dialect", 
-		        env.getProperty("hibernate.dialect"));
-		    additionalProperties.put(
-		        "hibernate.show_sql", 
-		        env.getProperty("hibernate.show_sql"));
-		    additionalProperties.put(
-		        "hibernate.hbm2ddl.auto", 
-		        env.getProperty("hibernate.hbm2ddl.auto"));
-		    entityManagerFactory.setJpaProperties(additionalProperties);
-		    
-		    return entityManagerFactory;
-		  }
+		dataSource.setUrl(env.getProperty("db.url"));
+		dataSource.setUsername(env.getProperty("db.username"));
+		dataSource.setPassword(env.getProperty("db.password"));
+		return dataSource;
+	}
 
-		  /**
-		   * Declare the transaction manager.
-		   */
-		  @Bean
-		  public JpaTransactionManager transactionManager() {
-		    JpaTransactionManager transactionManager = 
-		        new JpaTransactionManager();
-		    transactionManager.setEntityManagerFactory(
-		        entityManagerFactory.getObject());
-		    return transactionManager;
-		  }
-		  
-		  @Bean
-		  public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-		    return new PersistenceExceptionTranslationPostProcessor();
-		  }
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 
-		  // Private fields
-		  
-		  @Autowired
-		  private Environment env;
+		entityManagerFactory.setDataSource(dataSource);
 
-		  @Autowired
-		  private DataSource dataSource;
+		entityManagerFactory.setPackagesToScan(env.getProperty("entitymanager.packagesToScan"));
 
-		  @Autowired
-		  private LocalContainerEntityManagerFactoryBean entityManagerFactory;
-	
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		entityManagerFactory.setJpaVendorAdapter(vendorAdapter);
+
+		Properties additionalProperties = new Properties();
+		additionalProperties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+		additionalProperties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+		additionalProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+		entityManagerFactory.setJpaProperties(additionalProperties);
+
+		return entityManagerFactory;
+	}
+
+	@Bean
+	public JpaTransactionManager transactionManager() {
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(entityManagerFactory.getObject());
+		return transactionManager;
+	}
+
+	@Bean
+	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+		return new PersistenceExceptionTranslationPostProcessor();
+	}
+
+	@Autowired
+	private Environment env;
+
+	@Autowired
+	private DataSource dataSource;
+
+	@Autowired
+	private LocalContainerEntityManagerFactoryBean entityManagerFactory;
+
 }

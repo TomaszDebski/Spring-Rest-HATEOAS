@@ -1,12 +1,18 @@
 package pl.springTests.logic.entities;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * @author Tomasz Dębski
+ *
+ */
 
 @Entity
 public class Account {

@@ -1,6 +1,18 @@
 package pl.springTests.controllers;
 
-import java.awt.print.Printable;
+import static org.hamcrest.Matchers.endsWith;
+import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,18 +27,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.hamcrest.Matchers.endsWith;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import pl.springTests.SpringTestWithHateosApplication;
 import pl.springTests.logic.entities.Account;
 import pl.springTests.logic.entities.Book;
@@ -40,7 +42,6 @@ import pl.springTests.rest.controllers.AccountController;
  * @author Tomasz Dębski
  *
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringTestWithHateosApplication.class)
 @WebAppConfiguration
@@ -74,12 +75,10 @@ public class AccountControllerTest {
 		Book book1 = new Book();
 		book1.setId(1L);
 		book1.setTitle("title1");
-//		book1.setAccount(account);
 
 		Book book2 = new Book();
 		book2.setId(2L);
 		book2.setTitle("title2");
-//		book2.setAccount(account);
 		books.add(book1);
 		books.add(book2);
 
@@ -157,8 +156,14 @@ public class AccountControllerTest {
 		.andExpect(jsonPath("$.username", is("username")))
 		.andExpect(jsonPath("$.links[*].rel", hasItems(is("self"),is("user"))))
 		.andExpect(jsonPath("$.links[*].href", hasItems(endsWith("accounts/1"))))
-		.andExpect(status().isOk())
-		;
+		.andExpect(status().isOk());
 	}
-
+	
+	@Test
+	public void getNonExistingAccount() throws Exception {
+		when(accountService.findAccount(1L)).thenReturn(null);
+		
+		mockMvc.perform(get("/library/accounts/1"))
+		.andExpect(status().isNotFound());
+	}
 }

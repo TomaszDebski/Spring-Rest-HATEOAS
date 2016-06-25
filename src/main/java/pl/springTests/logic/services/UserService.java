@@ -5,6 +5,11 @@ import pl.springTests.logic.entities.User;
 import pl.springTests.logic.lists.AccountList;
 import pl.springTests.logic.lists.UserList;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public interface UserService {
 
 	UserList findAllUsers();

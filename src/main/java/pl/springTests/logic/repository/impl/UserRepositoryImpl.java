@@ -12,6 +12,11 @@ import pl.springTests.logic.entities.Account;
 import pl.springTests.logic.entities.User;
 import pl.springTests.logic.repository.UserRepository;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 	

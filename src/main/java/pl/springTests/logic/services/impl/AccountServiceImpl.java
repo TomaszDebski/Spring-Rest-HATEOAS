@@ -15,6 +15,11 @@ import pl.springTests.logic.repository.BookRepository;
 import pl.springTests.logic.repository.UserRepository;
 import pl.springTests.logic.services.AccountService;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Service
 @Transactional
 public class AccountServiceImpl implements AccountService {

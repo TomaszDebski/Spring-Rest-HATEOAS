@@ -5,6 +5,11 @@ import java.util.List;
 
 import org.springframework.hateoas.ResourceSupport;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class UserListResource extends ResourceSupport{
 
 	List<UserResource> users = new ArrayList<>();

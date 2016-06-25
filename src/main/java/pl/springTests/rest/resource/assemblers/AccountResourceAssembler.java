@@ -1,12 +1,18 @@
 package pl.springTests.rest.resource.assemblers;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
 import pl.springTests.logic.entities.Account;
 import pl.springTests.rest.controllers.AccountController;
 import pl.springTests.rest.resource.AccountResource;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AccountResourceAssembler extends ResourceAssemblerSupport<Account, AccountResource>{
 
 	public AccountResourceAssembler() {

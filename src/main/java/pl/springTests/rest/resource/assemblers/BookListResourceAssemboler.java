@@ -9,6 +9,10 @@ import pl.springTests.rest.controllers.BookController;
 import pl.springTests.rest.resource.BookListResource;
 import pl.springTests.rest.resource.BookResource;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class BookListResourceAssemboler extends ResourceAssemblerSupport<BookList, BookListResource> {
 
 	public BookListResourceAssemboler() {

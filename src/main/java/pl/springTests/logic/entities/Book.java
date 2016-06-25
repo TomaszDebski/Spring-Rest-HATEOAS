@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 @Entity
 public class Book {
 	

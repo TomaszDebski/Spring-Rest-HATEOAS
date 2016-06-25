@@ -10,11 +10,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import pl.springTests.SpringTestWithHateosApplication;
 import pl.springTests.logic.repository.UserRepository;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringTestWithHateosApplication.class)
 @WebAppConfiguration
 public class UserRepositoryTest {
-
 	
 	@Autowired
 	private UserRepository userRepository;

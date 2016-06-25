@@ -4,6 +4,11 @@ import java.util.List;
 
 import pl.springTests.logic.entities.Book;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class BookList {
 
 	private List<Book> books;

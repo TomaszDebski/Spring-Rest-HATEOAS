@@ -2,6 +2,11 @@ package pl.springTests.logic.services;
 
 import pl.springTests.logic.entities.Author;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public interface AuthorService {
 
 	Author deleteAuthor(Long authorId);

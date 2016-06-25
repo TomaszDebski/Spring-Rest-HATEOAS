@@ -4,6 +4,11 @@ import org.springframework.hateoas.ResourceSupport;
 
 import pl.springTests.logic.entities.User;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
+
 public class UserResource extends ResourceSupport {
 	
 	private String name;

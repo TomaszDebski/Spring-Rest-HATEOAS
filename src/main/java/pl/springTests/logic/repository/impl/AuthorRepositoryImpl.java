@@ -9,7 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import pl.springTests.logic.entities.Author;
+import pl.springTests.logic.lists.AuthorList;
 import pl.springTests.logic.repository.AuthorRepository;
+
+/**
+ * @author Tomasz Dębski
+ *
+ */
 
 @Repository
 public class AuthorRepositoryImpl implements AuthorRepository {
@@ -47,5 +53,20 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 		}else{
 			return resultList.get(0);
 		}
+	}
+	
+
+	@Override
+	public Author createAuthor(Author author) {
+		entityManager.persist(author);
+		return author;
+	}
+
+	@Override
+	public List<Author> findAuthorsByBook(Long bookId) {
+		Query query = entityManager.createQuery("select a from Author a where a.book.id = ?1");
+		query.setParameter(1, bookId);
+		return query.getResultList();
+		
 	}
 }

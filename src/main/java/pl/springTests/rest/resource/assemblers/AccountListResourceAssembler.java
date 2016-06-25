@@ -9,6 +9,10 @@ import pl.springTests.rest.controllers.AccountController;
 import pl.springTests.rest.resource.AccountListResource;
 import pl.springTests.rest.resource.AccountResource;
 
+/**
+ * @author Tomasz Dębski
+ *
+ */
 public class AccountListResourceAssembler extends ResourceAssemblerSupport<AccountList, AccountListResource> {
 
 	public AccountListResourceAssembler() {
