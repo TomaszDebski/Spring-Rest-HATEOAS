@@ -1,6 +1,7 @@
-# Spring-Rest-HATEOAS
+# Spring Rest HATEOAS
+============
 
-restsecurity
+A tutorial project on how to use and test Spring HATEOAS.
 
-A small tutorial project on how to use and test Spring HATEOAS.
+
 
