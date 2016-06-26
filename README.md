@@ -1,9 +1,9 @@
 # Spring Rest HATEOAS
 
-A tutorial project on how to use and test Spring HATEOAS.
 ============
+A tutorial project on how to use and test Spring HATEOAS.
 
-# User technologies:
+# Used technologies:
 
 
 
