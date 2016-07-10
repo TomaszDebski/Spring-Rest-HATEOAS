@@ -6,6 +6,9 @@ Used technologies:
 - Spring HATEOAS
 - JUnit
 - Mockito
+- Hibernate
+- JPA
+- H2
 
 
 
