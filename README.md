@@ -1,8 +1,11 @@
 # Spring Rest HATEOAS
 
-============
-
-# Used technologies:
+Used technologies:
+- Spring boot
+- Spring MVC
+- Spring HATEOAS
+- JUnit
+- Mockito
 
 
 
